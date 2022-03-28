@@ -71,27 +71,46 @@
       zoom: 13
     });
 
-
-    beforeMap.on('load', () => {
-      beforeMap.addSource('haifa', {
-        'type': 'raster',
-        'tiles': [
-          './tiles/1948/{z}/{x}/{y}.png'
-        ],
-        'tileSize': 256
+    afterMap.on('load', () => {
+      afterMap.addSource('mapbox-dem', {
+        'type': 'raster-dem',
+        'url': 'mapbox://mapbox.mapbox-terrain-dem-v1',
+        'tileSize': 512,
+        'maxzoom': 14
       });
-
-      beforeMap.addLayer({
-        'id': 'haifa',
-        'type': 'raster',
-        'source': 'haifa'
-      });
-
+      afterMap.setTerrain({ 'source': 'mapbox-dem', 'exaggeration': 1 });
     });
 
-    const container = '#comparison-container';
+    beforeMap.on('load', () => {
+      beforeMap.addSource('mapbox-dem', {
+        'type': 'raster-dem',
+        'url': 'mapbox://mapbox.mapbox-terrain-dem-v1',
+        'tileSize': 512,
+        'maxzoom': 14
+      });
+      beforeMap.setTerrain({ 'source': 'mapbox-dem', 'exaggeration': 1 });
+    });
 
-    const map = new mapboxgl.Compare(beforeMap, afterMap, container, {});
+      beforeMap.on('load', () => {
+        beforeMap.addSource('haifa', {
+          'type': 'raster',
+          'tiles': [
+            './tiles/1948/{z}/{x}/{y}.png'
+          ],
+          'tileSize': 256
+        });
+
+        beforeMap.addLayer({
+          'id': 'haifa',
+          'type': 'raster',
+          'source': 'haifa'
+        });
+
+      });
+
+      const container = '#comparison-container';
+
+      const map = new mapboxgl.Compare(beforeMap, afterMap, container, {});
 
 
   </script>
