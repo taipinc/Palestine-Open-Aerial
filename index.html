@@ -24,21 +24,56 @@
 
 <body>
 
-  <div id="map"></div>
+  <style>
+    body {
+      overflow: hidden;
+    }
+
+    body * {
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    .map {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 100%;
+    }
+  </style>
+  <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-compare/v0.4.0/mapbox-gl-compare.js"></script>
+  <link rel="stylesheet"
+    href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-compare/v0.4.0/mapbox-gl-compare.css" type="text/css" />
+
+
+  <div id="comparison-container">
+    <div id="before" class="map"></div>
+    <div id="after" class="map"></div>
+  </div>
+
   <script>
     mapboxgl.accessToken = 'pk.eyJ1IjoidGFpcGluYyIsImEiOiJkUFBSQ3pjIn0.MZIRmBUyRPb-ETRIF4xU7w';
-    (async () => {
-      const map = new mapboxgl.Map({
-        container: 'map',
-        style: 'mapbox://styles/mapbox/satellite-v9',
-        center: [35, 32.8],
-        zoom: 13
-      });
 
-      await map.once('load');
+    const beforeMap = new mapboxgl.Map({
+      container: 'before',
+      style: 'mapbox://styles/mapbox/satellite-v9',
+      center: [35, 32.8],
+      zoom: 13
+    });
+
+    const afterMap = new mapboxgl.Map({
+      container: 'after',
+      style: 'mapbox://styles/mapbox/satellite-v9',
+      center: [35, 32.8],
+      zoom: 13
+    });
 
 
-      map.addSource('haifa', {
+    beforeMap.on('load', () => {
+      beforeMap.addSource('haifa', {
         'type': 'raster',
         'tiles': [
           './tiles/1948/{z}/{x}/{y}.png'
@@ -46,32 +81,18 @@
         'tileSize': 256
       });
 
-      map.addLayer({
+      beforeMap.addLayer({
         'id': 'haifa',
         'type': 'raster',
         'source': 'haifa'
       });
 
-      map.addSource('mapbox-dem', {
-        'type': 'raster-dem',
-        'url': 'mapbox://mapbox.mapbox-terrain-dem-v1',
-        'tileSize': 512,
-        'maxzoom': 14
-      });
+    });
 
-      map.setTerrain({ 'source': 'mapbox-dem', 'exaggeration': 1 });
+    const container = '#comparison-container';
 
-      map.addLayer({
-        'id': 'sky',
-        'type': 'sky',
-        'paint': {
-          'sky-type': 'atmosphere',
-          'sky-atmosphere-sun': [0.0, 90.0],
-          'sky-atmosphere-sun-intensity': 15
-        }
-      });
+    const map = new mapboxgl.Compare(beforeMap, afterMap, container, {});
 
-    })();
 
   </script>
 
