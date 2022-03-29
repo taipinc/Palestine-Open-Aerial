@@ -100,35 +100,45 @@
         beforeMap.setStyle('mapbox://styles/mapbox/' + layerId);
         afterMap.setStyle('mapbox://styles/mapbox/' + layerId);
 
+        beforeMap.on('load', () => {
+          beforeMap.addSource('haifa', {
+            'type': 'raster',
+            'tiles': [
+              'https://pales-tiles.nyc3.digitaloceanspaces.com/tiles/1948/{z}/{x}/{y}.png'
+            ],
+            'tileSize': 256
+          });
+        });
+
+          beforeMap.addLayer({
+            'id': 'haifa',
+            'type': 'raster',
+            'source': 'haifa'
+          });
+        };
+      }
+
+
+      beforeMap.on('load', () => {
+        beforeMap.addSource('haifa', {
+          'type': 'raster',
+          'tiles': [
+            'https://pales-tiles.nyc3.digitaloceanspaces.com/tiles/1948/{z}/{x}/{y}.png'
+          ],
+          'tileSize': 256
+        });
+
         beforeMap.addLayer({
           'id': 'haifa',
           'type': 'raster',
           'source': 'haifa'
         });
-      };
-    }
 
-
-    beforeMap.on('load', () => {
-      beforeMap.addSource('haifa', {
-        'type': 'raster',
-        'tiles': [
-          'https://pales-tiles.nyc3.digitaloceanspaces.com/tiles/1948/{z}/{x}/{y}.png'
-        ],
-        'tileSize': 256
       });
 
-      beforeMap.addLayer({
-        'id': 'haifa',
-        'type': 'raster',
-        'source': 'haifa'
-      });
+      const container = '#comparison-container';
 
-    });
-
-    const container = '#comparison-container';
-
-    const map = new mapboxgl.Compare(beforeMap, afterMap, container, {});
+      const map = new mapboxgl.Compare(beforeMap, afterMap, container, {});
 
 
   </script>
