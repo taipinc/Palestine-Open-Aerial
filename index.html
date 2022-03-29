@@ -71,26 +71,6 @@
       zoom: 13
     });
 
-    afterMap.on('load', () => {
-      afterMap.addSource('mapbox-dem', {
-        'type': 'raster-dem',
-        'url': 'mapbox://mapbox.mapbox-terrain-dem-v1',
-        'tileSize': 512,
-        'maxzoom': 14
-      });
-      afterMap.setTerrain({ 'source': 'mapbox-dem', 'exaggeration': 1 });
-    });
-
-    beforeMap.on('load', () => {
-      beforeMap.addSource('mapbox-dem', {
-        'type': 'raster-dem',
-        'url': 'mapbox://mapbox.mapbox-terrain-dem-v1',
-        'tileSize': 512,
-        'maxzoom': 14
-      });
-      beforeMap.setTerrain({ 'source': 'mapbox-dem', 'exaggeration': 1 });
-    });
-
       beforeMap.on('load', () => {
         beforeMap.addSource('haifa', {
           'type': 'raster',
