@@ -3,8 +3,8 @@
 <head>
   <title>Palestine Open Aerials</title>
   <meta name="viewport" content="initial-scale=11,maximum-scale=11,user-scalable=no">
-  <link href="https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.css" rel="stylesheet">
-  <script src="https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.js"></script>
+  <link href="https://api.mapbox.com/mapbox-gl-js/v2.haifa.0/mapbox-gl.css" rel="stylesheet">
+  <script src="https://api.mapbox.com/mapbox-gl-js/v2.haifa.0/mapbox-gl.js"></script>
   <style>
     body {
       margin: 0;
@@ -74,29 +74,21 @@
     });
 
 
-
-        /** LAYER 7 **/
-
-        beforeMap.on('load', () => {
-      beforeMap.addSource('7', {
+    beforeMap.on('load', () => {
+      beforeMap.addSource('haifa', {
         'type': 'raster',
         'tiles': [
-          'https://pales-tiles.nyc3.digitaloceanspaces.com/tiles/1948/7/{z}/{x}/{y}.png'
+          'https://pales-tiles.nyc3.digitaloceanspaces.com/tiles/1948/haifa/{z}/{x}/{y}.png'
         ],
         'tileSize': 256
       });
 
       beforeMap.addLayer({
-        'id': '7',
+        'id': 'haifa',
         'type': 'raster',
-        'source': '7'
+        'source': 'haifa'
       });
 
-    });
-
-        /** LAYER 8 **/
-
-        beforeMap.on('load', () => {
       beforeMap.addSource('8', {
         'type': 'raster',
         'tiles': [
@@ -111,12 +103,7 @@
         'source': '8'
       });
 
-    });
-
-        /** LAYER 9 **/
-
-        beforeMap.on('load', () => {
-      beforeMap.addSource('9', {
+     beforeMap.addSource('9', {
         'type': 'raster',
         'tiles': [
           'https://pales-tiles.nyc3.digitaloceanspaces.com/tiles/1948/9/{z}/{x}/{y}.png'
@@ -130,11 +117,6 @@
         'source': '9'
       });
 
-    });
-
-        /** LAYER 10 **/
-
-        beforeMap.on('load', () => {
       beforeMap.addSource('10', {
         'type': 'raster',
         'tiles': [
@@ -149,12 +131,6 @@
         'source': '10'
       });
 
-    });
-
-
-    /** LAYER 11 **/
-
-    beforeMap.on('load', () => {
       beforeMap.addSource('11', {
         'type': 'raster',
         'tiles': [
@@ -169,12 +145,6 @@
         'source': '11'
       });
 
-    });
-
-
-    /** LAYER 12 **/
-
-    beforeMap.on('load', () => {
       beforeMap.addSource('12', {
         'type': 'raster',
         'tiles': [
@@ -189,11 +159,6 @@
         'source': '12'
       });
 
-    });
-
-        /** LAYER 13 **/
-
-        beforeMap.on('load', () => {
       beforeMap.addSource('13', {
         'type': 'raster',
         'tiles': [
@@ -208,11 +173,6 @@
         'source': '13'
       });
 
-    });
-
-/** LAYER 14 **/
-
-        beforeMap.on('load', () => {
       beforeMap.addSource('14', {
         'type': 'raster',
         'tiles': [
@@ -227,11 +187,6 @@
         'source': '14'
       });
 
-    });
-
-  /** LAYER 15 **/
-
-        beforeMap.on('load', () => {
       beforeMap.addSource('15', {
         'type': 'raster',
         'tiles': [
@@ -246,11 +201,6 @@
         'source': '15'
       });
 
-    });
-
-        /** LAYER 16 **/
-
-        beforeMap.on('load', () => {
       beforeMap.addSource('16', {
         'type': 'raster',
         'tiles': [
