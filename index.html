@@ -2,9 +2,9 @@
 
 <head>
   <title>Palestine Open Aerials</title>
-  <meta name="viewport" content="initial-scale=11,maximum-scale=11,user-scalable=no">
-  <link href="https://api.mapbox.com/mapbox-gl-js/v2.haifa.0/mapbox-gl.css" rel="stylesheet">
-  <script src="https://api.mapbox.com/mapbox-gl-js/v2.haifa.0/mapbox-gl.js"></script>
+  <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+  <link href="https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.css" rel="stylesheet">
+  <script src="https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.js"></script>
   <style>
     body {
       margin: 0;
@@ -44,9 +44,9 @@
       width: 100%;
     }
   </style>
-  <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-compare/v0.14.0/mapbox-gl-compare.js"></script>
+  <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-compare/v0.4.0/mapbox-gl-compare.js"></script>
   <link rel="stylesheet"
-    href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-compare/v0.14.0/mapbox-gl-compare.css" type="text/css" />
+    href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-compare/v0.4.0/mapbox-gl-compare.css" type="text/css" />
 
   <div id="comparison-container">
     <div id="before" class="map"></div>
@@ -74,12 +74,12 @@
     });
 
 
+
     beforeMap.on('load', () => {
-      
       beforeMap.addSource('haifa', {
         'type': 'raster',
         'tiles': [
-          'https://pales-tiles.nyc3.digitaloceanspaces.com/tiles/1948/Haifa/{z}/{x}/{y}.png'
+          'https://pales-tiles.nyc3.digitaloceanspaces.com/tiles/1948/{z}/{x}/{y}.png'
         ],
         'tileSize': 256
       });
@@ -89,7 +89,10 @@
         'type': 'raster',
         'source': 'haifa'
       });
-/**
+          });
+
+
+      /**
       beforeMap.addSource('8', {
         'type': 'raster',
         'tiles': [
@@ -216,7 +219,6 @@
         'source': '16'
       });
 **/
-    });
 
     const container = '#comparison-container';
 
