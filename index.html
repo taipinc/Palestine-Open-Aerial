@@ -76,7 +76,7 @@
 
 
     beforeMap.on('load', () => {
-      beforeMap.addSource('haifa', {
+      beforeMap.addSource('palestine', {
         'type': 'raster',
         'tiles': [
           'https://pales-tiles.nyc3.digitaloceanspaces.com/tiles/1948/{z}/{x}/{y}.png'
@@ -85,9 +85,9 @@
       });
 
       beforeMap.addLayer({
-        'id': 'haifa',
+        'id': 'palestine',
         'type': 'raster',
-        'source': 'haifa'
+        'source': 'palestine'
       });
 
 /**
