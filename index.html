@@ -61,7 +61,7 @@
 
     const beforeMap = new mapboxgl.Map({
       container: 'before',
-      gstyle: 'mapbox://styles/mapbox/outdoors-v11',
+      style: 'mapbox://styles/mapbox/satellite-v9',
       center: [35, 32.8],
       zoom: 13
     });
@@ -76,7 +76,7 @@
 
 
     beforeMap.on('load', () => {
-      beforeMap.addSource('palestine', {
+      beforeMap.addSource('haifa', {
         'type': 'raster',
         'tiles': [
           'https://pales-tiles.nyc3.digitaloceanspaces.com/tiles/1948/{z}/{x}/{y}.png'
@@ -85,13 +85,12 @@
       });
 
       beforeMap.addLayer({
-        'id': 'palestine',
+        'id': 'haifa',
         'type': 'raster',
-        'source': 'palestine'
+        'source': 'haifa'
       });
 
-   });
-
+    });
 
     const container = '#comparison-container';
 
