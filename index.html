@@ -2,7 +2,7 @@
 
 <head>
   <title>Palestine Open Aerials</title>
-  <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+  <meta name="viewport" content="initial-scale=11,maximum-scale=11,user-scalable=no">
   <link href="https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.css" rel="stylesheet">
   <script src="https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.js"></script>
   <style>
@@ -44,9 +44,9 @@
       width: 100%;
     }
   </style>
-  <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-compare/v0.4.0/mapbox-gl-compare.js"></script>
+  <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-compare/v0.14.0/mapbox-gl-compare.js"></script>
   <link rel="stylesheet"
-    href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-compare/v0.4.0/mapbox-gl-compare.css" type="text/css" />
+    href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-compare/v0.14.0/mapbox-gl-compare.css" type="text/css" />
 
   <div id="comparison-container">
     <div id="before" class="map"></div>
@@ -75,19 +75,194 @@
 
 
 
-    beforeMap.on('load', () => {
-      beforeMap.addSource('haifa', {
+        /** LAYER 7 **/
+
+        beforeMap.on('load', () => {
+      beforeMap.addSource('7', {
         'type': 'raster',
         'tiles': [
-          'https://pales-tiles.nyc3.digitaloceanspaces.com/tiles/1948/{z}/{x}/{y}.png'
+          'https://pales-tiles.nyc3.digitaloceanspaces.com/tiles/1948/7/{z}/{x}/{y}.png'
         ],
         'tileSize': 256
       });
 
       beforeMap.addLayer({
-        'id': 'haifa',
+        'id': '7',
         'type': 'raster',
-        'source': 'haifa'
+        'source': '7'
+      });
+
+    });
+
+        /** LAYER 8 **/
+
+        beforeMap.on('load', () => {
+      beforeMap.addSource('8', {
+        'type': 'raster',
+        'tiles': [
+          'https://pales-tiles.nyc3.digitaloceanspaces.com/tiles/1948/8/{z}/{x}/{y}.png'
+        ],
+        'tileSize': 256
+      });
+
+      beforeMap.addLayer({
+        'id': '8',
+        'type': 'raster',
+        'source': '8'
+      });
+
+    });
+
+        /** LAYER 9 **/
+
+        beforeMap.on('load', () => {
+      beforeMap.addSource('9', {
+        'type': 'raster',
+        'tiles': [
+          'https://pales-tiles.nyc3.digitaloceanspaces.com/tiles/1948/9/{z}/{x}/{y}.png'
+        ],
+        'tileSize': 256
+      });
+
+      beforeMap.addLayer({
+        'id': '9',
+        'type': 'raster',
+        'source': '9'
+      });
+
+    });
+
+        /** LAYER 10 **/
+
+        beforeMap.on('load', () => {
+      beforeMap.addSource('10', {
+        'type': 'raster',
+        'tiles': [
+          'https://pales-tiles.nyc3.digitaloceanspaces.com/tiles/1948/10/{z}/{x}/{y}.png'
+        ],
+        'tileSize': 256
+      });
+
+      beforeMap.addLayer({
+        'id': '10',
+        'type': 'raster',
+        'source': '10'
+      });
+
+    });
+
+
+    /** LAYER 11 **/
+
+    beforeMap.on('load', () => {
+      beforeMap.addSource('11', {
+        'type': 'raster',
+        'tiles': [
+          'https://pales-tiles.nyc3.digitaloceanspaces.com/tiles/1948/11/{z}/{x}/{y}.png'
+        ],
+        'tileSize': 256
+      });
+
+      beforeMap.addLayer({
+        'id': '11',
+        'type': 'raster',
+        'source': '11'
+      });
+
+    });
+
+
+    /** LAYER 12 **/
+
+    beforeMap.on('load', () => {
+      beforeMap.addSource('12', {
+        'type': 'raster',
+        'tiles': [
+          'https://pales-tiles.nyc3.digitaloceanspaces.com/tiles/1948/12/{z}/{x}/{y}.png'
+        ],
+        'tileSize': 256
+      });
+
+      beforeMap.addLayer({
+        'id': '12',
+        'type': 'raster',
+        'source': '12'
+      });
+
+    });
+
+        /** LAYER 13 **/
+
+        beforeMap.on('load', () => {
+      beforeMap.addSource('13', {
+        'type': 'raster',
+        'tiles': [
+          'https://pales-tiles.nyc3.digitaloceanspaces.com/tiles/1948/13/{z}/{x}/{y}.png'
+        ],
+        'tileSize': 256
+      });
+
+      beforeMap.addLayer({
+        'id': '13',
+        'type': 'raster',
+        'source': '13'
+      });
+
+    });
+
+/** LAYER 14 **/
+
+        beforeMap.on('load', () => {
+      beforeMap.addSource('14', {
+        'type': 'raster',
+        'tiles': [
+          'https://pales-tiles.nyc3.digitaloceanspaces.com/tiles/1948/14/{z}/{x}/{y}.png'
+        ],
+        'tileSize': 256
+      });
+
+      beforeMap.addLayer({
+        'id': '14',
+        'type': 'raster',
+        'source': '14'
+      });
+
+    });
+
+  /** LAYER 15 **/
+
+        beforeMap.on('load', () => {
+      beforeMap.addSource('15', {
+        'type': 'raster',
+        'tiles': [
+          'https://pales-tiles.nyc3.digitaloceanspaces.com/tiles/1948/15/{z}/{x}/{y}.png'
+        ],
+        'tileSize': 256
+      });
+
+      beforeMap.addLayer({
+        'id': '15',
+        'type': 'raster',
+        'source': '15'
+      });
+
+    });
+
+        /** LAYER 16 **/
+
+        beforeMap.on('load', () => {
+      beforeMap.addSource('16', {
+        'type': 'raster',
+        'tiles': [
+          'https://pales-tiles.nyc3.digitaloceanspaces.com/tiles/1948/16/{z}/{x}/{y}.png'
+        ],
+        'tileSize': 256
+      });
+
+      beforeMap.addLayer({
+        'id': '16',
+        'type': 'raster',
+        'source': '16'
       });
 
     });
