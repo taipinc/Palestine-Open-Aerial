@@ -124,10 +124,12 @@
         beforeMap.setStyle('mapbox://styles/mapbox/' + layerId);
         afterMap.setStyle('mapbox://styles/mapbox/' + layerId);
 
-        beforeMap.addLayer({
-          'id': 'haifa',
-          'type': 'raster',
-          'source': 'haifa'
+        beforeMap.on('load', () => {
+          beforeMap.addLayer({
+            'id': 'haifa',
+            'type': 'raster',
+            'source': 'haifa'
+          });
         });
       };
     }
