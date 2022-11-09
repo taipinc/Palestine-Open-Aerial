@@ -125,6 +125,14 @@
     }
 
     beforeMap.on('style.load', () => {
+      beforeMap.addSource('haifa', {
+        'type': 'raster',
+        'tiles': [
+          'https://pales-tiles.nyc3.digitaloceanspaces.com/tiles/1948/{z}/{x}/{y}.png'
+        ],
+        'tileSize': 256
+      });
+
       beforeMap.addLayer({
         'id': 'haifa',
         'type': 'raster',
