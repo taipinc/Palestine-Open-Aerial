@@ -124,7 +124,7 @@
         beforeMap.setStyle('mapbox://styles/mapbox/' + layerId);
         afterMap.setStyle('mapbox://styles/mapbox/' + layerId);
 
-        beforeMap.on('load', () => {
+        beforeMap.on('styledata', () => {
           beforeMap.addLayer({
             'id': 'haifa',
             'type': 'raster',
